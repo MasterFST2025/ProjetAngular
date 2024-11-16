@@ -1,3 +1,7 @@
+#Lien vers les vidéo des séances:
+https://drive.google.com/open?id=11IL8JYEfwRkEPExI5ZsspWFV-rhNj1Mw&usp=drive_fs
+
+
 # ProjetMaster
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
