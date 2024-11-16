@@ -1,0 +1,20 @@
+<button type="button" class="btn btn-primary" (click)="openModal()">Add</button>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">nom</th>
+      <th scope="col">age</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (etudiant of etudiants; track etudiant.id) {
+      <tr>
+        <td>{{etudiant.id}}</td>
+        <td>{{etudiant.nom}}</td>
+        <td>{{etudiant.age}}</td>
+      </tr>
+    }
+
+  </tbody>
+</table>
