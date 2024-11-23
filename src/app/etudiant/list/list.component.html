@@ -5,6 +5,8 @@
       <th scope="col">Id</th>
       <th scope="col">nom</th>
       <th scope="col">age</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -13,6 +15,8 @@
         <td>{{etudiant.id}}</td>
         <td>{{etudiant.nom}}</td>
         <td>{{etudiant.age}}</td>
+        <td><img src="assets/images/deleteIcon.ico" class="actionIcon" (click)="openDeleteModal(etudiant)"></td>
+        <td><img src="assets/images/updateIcon.png" class="actionIcon" (click)="updateEtudiant(etudiant)"></td>
       </tr>
     }
 

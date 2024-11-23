@@ -1,8 +1,8 @@
-<form [formGroup]="formEtudiant" (ngSubmit)="addEtudiant()">
+<form [formGroup]="formEtudiant" (ngSubmit)="actionEtudiant()">
   <button id="close_btn" type="button" class="btn btn-danger" (click)="closeModal()">X</button>
   <div class="row">
     <div class="row">
-      <h2>Ajouter un étudiant</h2>
+      <h2>{{action}} un étudiant</h2>
     </div>
     <div class="row">
       <input formControlName="id" type="text" class="form-control" placeholder="Id">
@@ -14,5 +14,5 @@
       <input formControlName="age" type="text" class="form-control" placeholder="Age">
     </div>
   </div>
-  <button id="valider" type="submit" class="btn btn-primary" >Add</button>
+  <button id="valider" type="submit" class="btn btn-primary" >{{action}}</button>
 </form>

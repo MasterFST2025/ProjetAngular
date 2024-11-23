@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { EtudiantService } from '../etudiant.service';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -10,20 +10,36 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './form.component.html',
   styleUrl: './form.component.css'
 })
-export class FormComponent {
+export class FormComponent{
   formEtudiant=this.fb.group({
     id:['',Validators.required],
     nom:['',Validators.required],
     age:['',Validators.required]
   })
-  constructor(private fb:FormBuilder,private etudiantService:EtudiantService,public activeModal:NgbActiveModal){}
 
-  addEtudiant(){
-    this.etudiantService.addEtudiant(this.formEtudiant.value)
+  etudiantData:any
+  action:string="Ajouter"
+  constructor(private fb:FormBuilder,private etudiantService:EtudiantService,public activeModal:NgbActiveModal){}
+  actionEtudiant(){
+    if (this.action=="Ajouter"){
+      this.addEtudiant()
+    }
+    else{
+      this.updateEtudiant(this.formEtudiant.value)
+    }
     this.activeModal.close()
   }
-
+  addEtudiant(){
+    this.etudiantService.addEtudiant(this.formEtudiant.value)
+  }
+  updateEtudiant(etudiant:any){
+    this.etudiantService.updateEtudiant(etudiant)
+  }
   closeModal() {
     this.activeModal.close()
+    }
+    ngOnInit() {
+      if (this.action=="Modifier")
+      this.formEtudiant.setValue(this.etudiantData)
     }
 }
