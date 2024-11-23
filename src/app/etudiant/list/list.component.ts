@@ -15,6 +15,7 @@ export class ListComponent {
   etudiants:any
   constructor(private etudiantService:EtudiantService,private modal:NgbModal){}
   ngOnInit() {
+    console.log(this.etudiantService.getAllEtudiants())
     this.etudiants=this.etudiantService.getAllEtudiants()
   }
   openModal(){

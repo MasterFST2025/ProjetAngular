@@ -31,6 +31,7 @@ export class FormComponent{
   }
   addEtudiant(){
     this.etudiantService.addEtudiant(this.formEtudiant.value)
+
   }
   updateEtudiant(etudiant:any){
     this.etudiantService.updateEtudiant(etudiant)
