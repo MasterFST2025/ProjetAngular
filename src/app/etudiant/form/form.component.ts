@@ -16,7 +16,7 @@ export class FormComponent{
     nom:['',Validators.required],
     age:['',Validators.required]
   })
-
+  photo!:File
   etudiantData:any
   action:string="Ajouter"
   constructor(private fb:FormBuilder,private etudiantService:EtudiantService,public activeModal:NgbActiveModal){}
@@ -30,7 +30,7 @@ export class FormComponent{
     this.activeModal.close()
   }
   addEtudiant(){
-    this.etudiantService.addEtudiant(this.formEtudiant.value)
+    this.etudiantService.addEtudiant(this.formEtudiant,this.photo)
 
   }
   updateEtudiant(etudiant:any){
@@ -42,5 +42,10 @@ export class FormComponent{
     ngOnInit() {
       if (this.action=="Modifier")
       this.formEtudiant.setValue(this.etudiantData)
+    }
+
+    fileSelected(event:any){
+      const file=event.target.files[0]
+      if (file)this.photo=file
     }
 }

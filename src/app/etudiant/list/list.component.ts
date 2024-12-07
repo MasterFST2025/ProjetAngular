@@ -12,12 +12,9 @@ import { DeletemodalComponent } from './deletemodal/deletemodal.component';
   styleUrl: './list.component.css'
 })
 export class ListComponent {
-  etudiants:any
+  etudiants=this.etudiantService.etudiants
   constructor(private etudiantService:EtudiantService,private modal:NgbModal){}
-  ngOnInit() {
-    console.log(this.etudiantService.getAllEtudiants())
-    this.etudiants=this.etudiantService.getAllEtudiants()
-  }
+
   openModal(){
     this.modal.open(FormComponent)
   }

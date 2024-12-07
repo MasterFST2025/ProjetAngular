@@ -10,11 +10,12 @@
     </tr>
   </thead>
   <tbody>
-    @for (etudiant of etudiants; track etudiant.id) {
+    @for (etudiant of etudiants(); track etudiant.id) {
       <tr>
         <td>{{etudiant.id}}</td>
         <td>{{etudiant.nom}}</td>
         <td>{{etudiant.age}}</td>
+        <td><img src="{{etudiant.photo}}" class="photo" ></td>
         <td><img src="assets/images/deleteIcon.ico" class="actionIcon" (click)="openDeleteModal(etudiant)"></td>
         <td><img src="assets/images/updateIcon.png" class="actionIcon" (click)="updateEtudiant(etudiant)"></td>
       </tr>

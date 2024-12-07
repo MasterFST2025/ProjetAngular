@@ -13,6 +13,9 @@
     <div class="row">
       <input formControlName="age" type="text" class="form-control" placeholder="Age">
     </div>
+    <div class="row">
+      <input type="file" (change)="fileSelected($event)" class="form-control">
+    </div>
   </div>
   <button id="valider" type="submit" class="btn btn-primary" >{{action}}</button>
 </form>
